@@ -35,7 +35,7 @@ public class ClientService extends BaseService<Client> {
     }
 
     @Override
-    protected Client Update(Client client) {
+    public Client Update(Client client) {
         client = ValidatedClient(client);
 
         if(!client.getStatus())

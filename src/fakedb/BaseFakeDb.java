@@ -10,10 +10,7 @@ public abstract class BaseFakeDb<TDomain> {
 
     protected BaseFakeDb(){
         this.table = new ArrayList<TDomain>();
-    }
-
-    protected int GeneretedId(){
-        return Utility.GetNextId(this.table);
+        this.FillTable();
     }
 
     protected abstract void FillTable();

@@ -1,6 +1,7 @@
 package fakedb;
 
 import domain.Client;
+import shared.Utility;
 
 public class ClientFakeDb extends BaseFakeDb<Client> {
     
@@ -12,7 +13,7 @@ public class ClientFakeDb extends BaseFakeDb<Client> {
     protected void FillTable() {
        this.table.add(
             new Client(
-                GeneretedId(), 
+                Utility.GetNextId(this.table), 
                 "Chrigor G.", 
                 "123.456.789.00", 
                 "chrigorcontato@gmail.com", 

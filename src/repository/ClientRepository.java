@@ -26,7 +26,16 @@ public class ClientRepository extends BaseRepository<Client> {
 
     @Override
     public Client Read(int id) {
-        return this.datas.get(id);
+        // Aqui estou fazendo de acordo com os elementos da lista
+        // Se o usuario digitar 1 significa que ele quer o primerio elemento 
+        // No caso o elemento "0" e assim por diante
+        int index = id - 1;
+
+        // Se o index for menor ou maior do que o suportado pela lista, retorna nulo
+        if (index < 0 || index >= this.datas.size()) {
+            return null;
+        }
+        return this.datas.get(index);
     }
 
     @Override
